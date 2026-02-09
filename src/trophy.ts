@@ -10,7 +10,7 @@ class RankCondition {
   ) {}
 }
 
-let wantAchieveSuperRank = false;
+let wantAchieveSuperRank = true;
 let wantMultipleLang = true;
 let wantLongTimeAccount = true;
 let wantAncientAccount = false;
