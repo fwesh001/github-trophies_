@@ -1,10 +1,10 @@
 {
   "functions": {
-    "index.ts": {
-      "runtime": "deno"
+    "api/**/*.ts": {
+      "runtime": "@lowlighter/vercel-deno@2.9.2"
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "/index.ts" }
+    { "src": "/(.*)", "dest": "/api/index.ts" }
   ]
 }
