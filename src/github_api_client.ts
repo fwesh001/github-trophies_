@@ -121,12 +121,18 @@ export class GithubAPIClient {
         headers: { Authorization: `bearer ${token}` },
       },
     ).catch((error) => {
-      console.error(error.response.data.errors[0].message);
+      console.error(
+        error?.response?.data?.errors?.[0]?.message ?? error?.message ?? error,
+      );
+      return null;
     });
-    if (response.status != 200) {
-      console.error(`Status code: ${response.status}`);
-      console.error(response.data);
+    if (response == null || response.status != 200) {
+      if (response != null) {
+        console.error(`Status code: ${response.status}`);
+        console.error(response.data);
+      }
+      return null;
     }
-    return response.data.data.user;
+    return response.data?.data?.user ?? null;
   }
 }
