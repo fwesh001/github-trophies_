@@ -1,8 +1,9 @@
-import { GithubAPIClient } from "./src/github_api_client.ts";
-import { Card } from "./src/card.ts";
-import { CONSTANTS, parseParams } from "./src/utils.ts";
-import { COLORS, Theme } from "./src/theme.ts";
-import { Error400, Error404 } from "./src/error_page.ts";
+#!/usr/bin/env -S deno run --allow-read --allow-net --allow-env
+import { GithubAPIClient } from "../src/github_api_client.ts";
+import { Card } from "../src/card.ts";
+import { CONSTANTS, parseParams } from "../src/utils.ts";
+import { COLORS, Theme } from "../src/theme.ts";
+import { Error400, Error404 } from "../src/error_page.ts";
 
 const client = new GithubAPIClient();
 
