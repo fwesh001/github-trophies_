@@ -1,4 +1,4 @@
-// @vercel: --allow-read --allow-net --allow-env
+//@vercel: --allow-read --allow-net --allow-env
 import { GithubAPIClient } from "../src/github_api_client.ts";
 import { Card } from "../src/card.ts";
 import { CONSTANTS, parseParams } from "../src/utils.ts";
