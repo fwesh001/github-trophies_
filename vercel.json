@@ -4,7 +4,7 @@
       "runtime": "@lowlighter/vercel-deno@2.9.2"
     }
   },
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/index.ts" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index.ts" }
   ]
 }
