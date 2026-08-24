@@ -12,13 +12,10 @@ export default async (req: Request) => {
     return await handleRequest(req);
   } catch (error) {
     console.error(error);
-    return new Response(
-      `500 Internal Server Error\n\n${error instanceof Error ? `${error.message}\n\n${error.stack}` : error}`,
-      {
-        status: 500,
-        headers: new Headers({ "Content-Type": "text/plain" }),
-      },
-    );
+    return new Response("500 Internal Server Error", {
+      status: 500,
+      headers: new Headers({ "Content-Type": "text/plain" }),
+    });
   }
 };
 
