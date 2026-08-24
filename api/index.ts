@@ -8,6 +8,21 @@ import "https://deno.land/x/dotenv@v0.5.0/load.ts";
 const client = new GithubAPIClient();
 
 export default async (req: Request) => {
+  try {
+    return await handleRequest(req);
+  } catch (error) {
+    console.error(error);
+    return new Response(
+      `500 Internal Server Error\n\n${error instanceof Error ? `${error.message}\n\n${error.stack}` : error}`,
+      {
+        status: 500,
+        headers: new Headers({ "Content-Type": "text/plain" }),
+      },
+    );
+  }
+};
+
+const handleRequest = async (req: Request) => {
   const params = parseParams(req);
   const username = params.get("username");
   const row = params.getNumberValue("row", CONSTANTS.DEFAULT_MAX_ROW);
